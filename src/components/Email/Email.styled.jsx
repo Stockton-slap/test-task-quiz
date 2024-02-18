@@ -22,5 +22,3 @@ export const Input = styled.input`
 `;
 
 export const EmailTerms = styled.p``;
-
-export const EmailBtn = styled.button``;

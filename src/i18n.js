@@ -25,9 +25,12 @@ i18n
             2: {
               title: "What gender do you identify with?",
               subTitle: "Please share how do you identify yourself",
-              type: "single-select",
-              options: ["Male", "Female", "Other"],
-              emojis: ["👩", "👨", "😉"],
+              type: "single-select-image",
+              options: [
+                { text: "Female", emoji: "👩" },
+                { text: "Male", emoji: "👨" },
+                { text: "Other", emoji: "😉" },
+              ],
             },
             3: {
               title: "What is your age?",
@@ -66,9 +69,12 @@ i18n
             2: {
               title: "Welcher Geschlecht identifizierst du?",
               subTitle: "Bitte teilen Sie mit, wie Sie sich identifizieren",
-              type: "single-select",
-              options: ["Maennlich", "Weiblich", "Divers"],
-              emojis: ["👩", "👨", "😉"],
+              type: "single-select-image",
+              options: [
+                { text: "Weiblich", emoji: "👩" },
+                { text: "Maennlich", emoji: "👨" },
+                { text: "Divers", emoji: "😉" },
+              ],
             },
             3: {
               title: "Wie alt bist du?",
@@ -107,9 +113,12 @@ i18n
             2: {
               title: "Quel est votre genre?",
               subTitle: "Veuillez partager comment vous vous identifiez",
-              type: "single-select",
-              options: ["Homme", "Femme", "Autre"],
-              emojis: ["👩", "👨", "😉"],
+              type: "single-select-image",
+              options: [
+                { text: "Femme", emoji: "👩" },
+                { text: "Homme", emoji: "👨" },
+                { text: "Autre", emoji: "😉" },
+              ],
             },
             3: {
               title: "Quel est votre age?",
@@ -148,9 +157,12 @@ i18n
             2: {
               title: "Cual es tu genero?",
               subTitle: "Por favor, comparte cómo te identificas",
-              type: "single-select",
-              options: ["Hombre", "Mujer", "Otro"],
-              emojis: ["👩", "👨", "😉"],
+              type: "single-select-image",
+              options: [
+                { text: "Mujer", emoji: "👩" },
+                { text: "Hombre", emoji: "👨" },
+                { text: "Otro", emoji: "😉" },
+              ],
             },
             3: {
               title: "Cual es tu edad?",

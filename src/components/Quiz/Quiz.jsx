@@ -12,6 +12,7 @@ export default function Quiz() {
   const { t, i18n } = useTranslation();
   const [answers, setAnswers] = useState([]);
   const [loader, setLoader] = useState(false);
+  const [selectedOptions, setSelectedOptions] = useState([]);
 
   const currentQuestion = t(`questions.${questionId}`, {
     returnObjects: true,
@@ -51,6 +52,23 @@ export default function Quiz() {
     }
   };
 
+  const handleOptionChange = (option) => {
+    if (selectedOptions.includes(option)) {
+      setSelectedOptions(
+        selectedOptions.filter((selected) => selected !== option)
+      );
+    } else {
+      setSelectedOptions([...selectedOptions, option]);
+    }
+  };
+
+  const onNextQuestionClick = () => {
+    const newAnswers = { ...answers, [questionId]: selectedOptions };
+    setAnswers(newAnswers);
+    localStorage.setItem("answers", JSON.stringify(newAnswers));
+    navigate(`/quiz/${questionId + 1}`);
+  };
+
   useEffect(() => {
     if (loader) setTimeout(() => navigate(`/email`), 5000);
   }, [loader, navigate]);
@@ -68,6 +86,9 @@ export default function Quiz() {
       question={currentQuestion}
       onAnswer={handleAnswer}
       questionId={questionId}
+      handleOptionChange={handleOptionChange}
+      selectedOptions={selectedOptions}
+      onNextQuestionClick={onNextQuestionClick}
     />
   );
 }

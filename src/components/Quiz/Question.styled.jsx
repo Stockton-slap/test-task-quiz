@@ -72,11 +72,20 @@ export const QuestionItem = styled.li`
       height: 100%;
       padding: 20px;
     `}
+
+     ${(props) =>
+    props.questionId === 4 &&
+    css`
+      display: flex;
+      justify-content: space-between;
+    `}
 `;
 
 export const QuestionEmoji = styled.span`
   font-size: 36px;
 `;
+
+export const QuestionEmojiText = styled.span``;
 
 export const QuestionBtn = styled.button`
   width: 100%;
@@ -89,3 +98,5 @@ export const QuestionBtn = styled.button`
   background-color: ${(props) => props.theme.colors.btn};
   margin-top: ${(props) => props.questionId === 2 && "10px"};
 `;
+
+export const QuestionInput = styled.input``;

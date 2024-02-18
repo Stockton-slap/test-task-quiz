@@ -1,20 +1,16 @@
-import { useMemo, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { validateEmail } from "../../utils/utils";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
-  EmailBtn,
   EmailContainer,
   EmailTerms,
   EmailText,
   EmailTitle,
   Input,
 } from "./Email.styled";
+import Button from "../Button/Button";
 
 export default function Email() {
   const [value, setValue] = useState("");
-  const navigate = useNavigate();
-  const isValid = useMemo(() => validateEmail(value), [value]);
   const { t } = useTranslation();
 
   const emailText = t("emailText", { returnObjects: true });
@@ -32,9 +28,7 @@ export default function Email() {
         onChange={(e) => setValue(e.target.value)}
       />
       <EmailTerms>{terms}</EmailTerms>
-      <EmailBtn disabled={!isValid} onClick={() => navigate("/results")}>
-        Next
-      </EmailBtn>
+      <Button value={value} />
     </EmailContainer>
   );
 }
